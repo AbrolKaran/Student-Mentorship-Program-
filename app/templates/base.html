@@ -1,0 +1,55 @@
+<html>
+    <head>
+        {% if title %}
+        <title> {{ title }} </title>
+        {% else %}
+        <title> Default </title>
+        {% endif %}
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/21d2eca3df.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mob-styles.css') }}">
+    </head>
+    <body class="home-bg">
+        <div style="display: flex; justify-content: space-between; padding: 25px; align-items: center;">
+            <img src="{{ url_for('static', filename='images/collegeLogo.png') }}" style="max-width: 25%;">
+            <h3 style="color: grey;">Student Mentorship Program</h2>
+        </div>
+    <nav>
+        <ul class="nav-links">
+            <li> <a href="{{ url_for('home') }}"> Home </a> </li>
+            <li> <a href="https://www.iiitd.edu.in/smp/" style="margin-left: -10px;"> About </a> </li>
+            {% if not g.user %}
+            <li class="navbar-nav navbar-right" style="float:right"> <a href="{{ url_for('login') }}"> Login </a> </li>
+            {% else %}
+            <li style="float:right"> <a href="{{ url_for('logout') }}"> Logout </a> </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+        {% block content %}{% endblock %}
+    
+        <div id="footer" class="clearfix" style="margin-top: 50px;">
+
+            <div class="copyright text-center" style="color:#FFFFFF;">Copyright © 2022. <a href="/" style="color: white;">IIIT-Delhi</a>
+              </div>
+          </div>
+    </body>
+</html>

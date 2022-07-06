@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="ques-div">
+        <form method="post" novalidate>
+            <h2 class="qnum">Question {{q.q_id}}</h2>
+            <div class="dotted-spaced"></div>
+            <hr>
+            <!-- <h3 class="ques-heading">{{q.ques}}</h3> -->
+            {% if q.q_id == 1 %}
+            <h3 class="ques-heading">Your mentee shared an issue, you offered some suggestions but the mentee criticizes your suggestions, <br> calling them stupid and impractical, what do you do?</h3>
+            <img src="{{ url_for('static', filename='images/smp1.png') }}" style="padding-left: 270px;">
+            {% endif %}
+            {% if q.q_id == 2 %}
+            <h3 class="ques-heading">Your mentee shares that they have not left their room in days, do not feel like eating and <br> haven’t been able to sleep. What do you do?</h3>
+            <img src="{{ url_for('static', filename='images/smp4.png') }}" style="padding-left: 200px;">
+            {% endif %}
+            {% if q.q_id == 3 %}
+            <h3 class="ques-heading">Your mentee wanted to meet you but when you meet they are sitting quietly.</h3>
+            <img src="{{ url_for('static', filename='images/smp2.png') }}" style="padding-left: 150px;margin-top: -30px;">
+            {% endif %}
+            {% if q.q_id == 4 %}
+            <h3 class="ques-heading">You confront your mentee about their silence and they get uncomfortable and defensive.<br> How do you aid the situation?</h3>
+            <img src="{{ url_for('static', filename='images/smp2_2.png') }}" style="padding-left: 180px;margin-top: -30px;margin-bottom: 50px;">
+            {% endif %}
+            {% if q.q_id == 5 %}
+            <h3 class="ques-heading">Your mentee does not seem to be making any friends in their batch and prefers finding you and <br> spending all their time with you. How would you set a boundary if you don’t feel comfortable  <br> with this?</h3>
+            <img src="{{ url_for('static', filename='images/smp6.png') }}" style="padding-left: 380px;margin-top: -30px;">
+            {% endif %}
+            {% if q.q_id == 6 %}
+            <h3 class="ques-heading">Why do you want to be IIITD Student Mentor?</h3>
+            <img src="{{ url_for('static', filename='images/smp3.png') }}" style="padding-left: 220px;margin-top: -30px;">
+            {% endif %}
+            <br><br><br>
+            <div class="options-div">
+                {{ form.options(class="list-unstyled") }}
+            </div>
+            <br>
+            {{ form.submit(class="btn btn-info btn-lg sub-btn") }}
+        </form>
+        <!-- <span class="check-circle">
+            <i class="fas fa-check-circle"></i>
+        </span> -->
+    </div>
+
+{% endblock %}
+
