@@ -16,8 +16,7 @@ Table of contents
 Preview:
 
 
-
-https://user-images.githubusercontent.com/50194033/118162704-adb19300-b43e-11eb-9399-279b4fa2afef.mp4
+https://user-images.githubusercontent.com/59598251/177497211-af48dca1-7a32-42a3-9ef8-b12c872b06f0.mov
 
 
 This project introduces an innovative approach for evaluation students that focuses on micro-expresssion monitoring and time-based evaluations in addition to response accuracy. 
