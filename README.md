@@ -68,8 +68,6 @@ $ flask run
 $ npm run generate
 ```
 
-Distributed under the MIT License. See LICENSE for more information.
-
 ## Contact
 
 Name: Rishit Gupta - rishit19091@iiitd.ac.in
