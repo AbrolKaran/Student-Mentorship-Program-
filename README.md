@@ -70,7 +70,8 @@ $ npm run generate
 
 ## Contact
 
-Name: Rishit Gupta - rishit19091@iiitd.ac.in
+🎸 Rishit Gupta - rishit19091@iiitd.ac.in
+🎨 Dhairya Chaudhary - dhairya19035@iiitd.ac.in
 
 ProjectLink: https://github.com/rsus4/Student-Mentorship-Program-
 
